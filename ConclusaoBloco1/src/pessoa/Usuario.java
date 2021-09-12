@@ -3,15 +3,95 @@ package pessoa;
 import java.util.Scanner;
 
 public class Usuario extends Pessoa {
+
+	private String decisaoUsuario = " ";
+	
+	public String escolhaUsuario() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Você deseja ser doador ou voluntário?" + "\nDoador: 1" + "\nVoluntário: 2");
+		int escolha = scan.nextInt();
+		scan.nextLine();
+		if (escolha == 1) {
+			this.setEscolhaUsuario("doador");
+			return "doador";
+		}
+		else {
+			this.setEscolhaUsuario("voluntario");
+			return "voluntario";
+		}
+	}
 	
 	public Usuario() {}
-	public Usuario(String nome, int idade, String regiao) {
+	public Usuario(String nome, int idade, String regiao, String escolhaUsuario, String decisaoUsuario) {
 		this.setNome(nome);
 		this.setRegiao(regiao);
 		this.setIdade(idade);
+		this.setEscolhaUsuario(escolhaUsuario);
+		this.setDecisaoUsuario(decisaoUsuario);
 	}
 
-	@Override
+	public String decisaoUsuario(String escolhaUsuario) {
+		Scanner scan = new Scanner(System.in);
+		
+		
+		if (escolhaUsuario.equals("doador")) {
+			System.out.print(" ___________________________________________________________________\n");
+			System.out.print("|O'que você deseja doar?                           				  |\n");
+			System.out.print("| 1 - Dinheiro                                       				  |\n");
+			System.out.print("| 2 - Vestuários		                                              |\n");
+			System.out.print("| 3 - Alimentos                                                     |\n");
+			System.out.print("| 4 - Objetos	                                                      |\n");
+			System.out.print("|___________________________________________________________________|\n");
+			int escolha = scan.nextInt();
+			scan.nextLine();
+			switch (escolha) {
+			
+			case 1: 
+			return "Dinheiro";
+			
+			case 2: 
+			return "Vestuários";
+			
+			case 3: 
+			return "Alimentos";
+			
+			case 4:
+			return "Objetos";
+			
+			default: System.out.println("Opção inválida!");
+			break;
+			}
+		}
+		else if (escolhaUsuario.equals("voluntario")) {
+			System.out.print(" ___________________________________________________________________\n");
+			System.out.print("|Qual o serviço que deseja oferecer?                 				  |\n");
+			System.out.print("| 1 - Transporte                                      			  |\n");
+			System.out.print("| 2 - Cozinhar		                                              |\n");
+			System.out.print("| 3 - Lecionar                                                      |\n");
+			System.out.print("| 4 - Outros	                                                      |\n");
+			System.out.print("|___________________________________________________________________|\n");
+			int escolha = scan.nextInt();
+			switch (escolha) {
+			
+			case 1:
+			return "Transporte";
+			
+			case 2:
+			return "Cozinhar";
+			
+			case 3: 
+			return "Lecionar";
+			
+			case 4:
+			return null;
+			
+			default: System.out.println("Opção inválida!");
+			break;
+			}
+		}
+		return "entrou";
+	}
 	public String nome() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Digite seu nome: ");
@@ -76,4 +156,14 @@ public class Usuario extends Pessoa {
 		}
 		return null;
 	} // Fim metodo localPessoa
+
+	public String getDecisaoUsuario() {
+		return decisaoUsuario;
+	}
+
+	public void setDecisaoUsuario(String decisaoUsuario) {
+		this.decisaoUsuario = decisaoUsuario;
+	}
+
+
 }

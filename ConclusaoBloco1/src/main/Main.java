@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Usuario usuario = new Usuario();
-		ArrayList<Pessoa> usuarioLista = new ArrayList<Pessoa>();
+		ArrayList<Usuario> usuarioLista = new ArrayList<Usuario>();
 		ArrayList<Organizacao> organizacaoLista = new ArrayList<Organizacao>();
 
 		while (true) {
@@ -35,7 +35,9 @@ public class Main {
 
 			switch (opcao) {
 			case 1:
-				usuarioLista.add(new Usuario(usuario.nome(), usuario.idade(), usuario.localUsuario()));
+				usuarioLista.add(
+						new Usuario(usuario.nome(), usuario.idade(), usuario.localUsuario(), usuario.escolhaUsuario(), usuario.decisaoUsuario(usuario.getEscolhaUsuario())));
+				
 				for (int i = 0; i < usuarioLista.size(); i++) {
 					System.out
 							.println("\nNome do usuario número: ( " + (i + 1) + " ) " + usuarioLista.get(i).getNome());
@@ -43,7 +45,11 @@ public class Main {
 							.println("Idade do usuario número: ( " + (i + 1) + " ) " + usuarioLista.get(i).getIdade());
 					System.out.println(
 							"Localização do usuario número: ( " + (i + 1) + " ) " + usuarioLista.get(i).getRegiao());
+					System.out.println("A sua decisão foi: " + usuarioLista.get(i).getEscolhaUsuario());
+					System.out.println("A sua decisão foi: " + usuarioLista.get(i).getDecisaoUsuario());
+
 				}
+
 				break;
 			case 2:
 				break;
