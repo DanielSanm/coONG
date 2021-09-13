@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Usuario extends Pessoa {
 
-	private String decisaoUsuario = " ";
+	private String decisaoUsuario = "";
+	private String escolhaOng = "";
 	
 	public String escolhaUsuario() {
 		Scanner scan = new Scanner(System.in);
@@ -163,6 +164,16 @@ public class Usuario extends Pessoa {
 
 	public void setDecisaoUsuario(String decisaoUsuario) {
 		this.decisaoUsuario = decisaoUsuario;
+	}
+
+	public String getEscolhaOng() {
+		return escolhaOng;
+	}
+
+	public void setEscolhaOng() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Escolha a ONG: ");
+		this.escolhaOng = scan.nextLine();
 	}
 
 
