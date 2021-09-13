@@ -4,14 +4,7 @@ public abstract class Pessoa implements InterfacePessoa{
 	private String nome = "";
 	private String regiao = "";
 	private int idade = 0;
-	private String escolhaUsuario = " ";
 	
-	public String getEscolhaUsuario() {
-		return escolhaUsuario;
-	}
-	public void setEscolhaUsuario(String escolhaUsuario) {
-		this.escolhaUsuario = escolhaUsuario;
-	}
 	public String getRegiao() {
 		return regiao;
 	}

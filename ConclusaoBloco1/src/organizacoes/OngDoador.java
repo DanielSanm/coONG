@@ -1,6 +1,10 @@
 package organizacoes;
 
+import java.util.ArrayList;
+
 public class OngDoador extends Organizacao {
+	
+	ArrayList<OngDoador> organizacaoLista = new ArrayList<OngDoador>();
 	
 	public OngDoador() {}
 	public OngDoador(String nome, String regiao, String contato, int pix, String tipoOng) {
@@ -8,8 +12,16 @@ public class OngDoador extends Organizacao {
 		this.setRegiao(regiao);
 		this.setContato(contato);
 		this.setPix(pix);
-		
 		this.setTipoOng(tipoOng);
+	}
+	
+	public void adicionarOngsPredefinidas() {
+		organizacaoLista.add(new OngDoador("Ceu azul","Zona norte","ceuazul@gmail.com",423432432, "doador"));
+	}
+	
+	public void adicionarOngsManual() {
+		OngDoador ongDoador = new OngDoador();
+		
 	}
 	
 	@Override
@@ -37,14 +49,20 @@ public class OngDoador extends Organizacao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public void mostraOng(Organizacao organizacao) {
-		System.out.println("______________________________________________");
-		System.out.println("\nNome da ONG: " + organizacao.getNome());
-		System.out.println("Região: " + organizacao.getRegiao());
-		System.out.println("Contato: " + organizacao.getContato());
-		System.out.println("PIX: " + organizacao.getPix());
 	
-		System.out.println("______________________________________________");
+	@Override
+	public String toString() {
+		return "\n______________________________________________\n" 
+				+ "\nNome da ONG: " + this.getNome() 
+				+ "\nRegião: " + this.getRegiao() 
+				+ "\nContato: " + this.getContato() 
+				+ "\nPix: " + this.getPix() 
+				+ "\n______________________________________________\n\n";	
+	}
+	
+	@Override
+	public void mostraOng() {
+		adicionarOngsPredefinidas();
+		System.out.println(organizacaoLista);
 	}
 }

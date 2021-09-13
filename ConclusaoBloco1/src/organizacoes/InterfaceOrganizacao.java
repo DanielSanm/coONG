@@ -7,5 +7,5 @@ public interface InterfaceOrganizacao {
 	public String contato();
 	public int pix();
 	public String necessidades();
-	public void mostraOng(Organizacao organizacao);
+	public void mostraOng();
 }
