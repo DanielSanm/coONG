@@ -35,7 +35,12 @@ public class Usuario extends Pessoa {
 
 	public String escolhaUsuario() {
 
-		System.out.println("Você deseja ser doador ou voluntário?" + "\nDoador: 1" + "\nVoluntário: 2");
+		System.out.print(" ___________________________________________________________________\n");
+		System.out.print("| Qual seu objetivo:                                                |\n");
+		System.out.print("| 1 - Ser Doador                                                    |\n");
+		System.out.print("| 2 - Ser Voluntário                                                |\n");
+		System.out.print("|___________________________________________________________________|\n");
+		System.out.print("Opção: ");
 		int escolha = scan.nextInt();
 		scan.nextLine();
 		if (escolha == 1) {
@@ -48,6 +53,9 @@ public class Usuario extends Pessoa {
 	public String decisaoUsuario(String escolhaUsuario) {
 		
 		if (escolhaUsuario.equals("doador")) {
+			System.out.print("---------------------------------------------------------------------");
+			System.out.print("\n\t\t\tOpções de Doação \n");
+			System.out.print("---------------------------------------------------------------------\n");
 			System.out.print(" ___________________________________________________________________\n");
 			System.out.print("| O que você deseja doar?                                           |\n");
 			System.out.print("| 1 - Dinheiro                                                      |\n");
@@ -55,6 +63,7 @@ public class Usuario extends Pessoa {
 			System.out.print("| 3 - Alimentos                                                     |\n");
 			System.out.print("| 4 - Objetos	                                                    |\n");
 			System.out.print("|___________________________________________________________________|\n");
+			System.out.print("Opção: ");
 			int escolha = scan.nextInt();
 			scan.nextLine();
 			switch (escolha) {
@@ -76,13 +85,17 @@ public class Usuario extends Pessoa {
 				break;
 			}
 		} else if (escolhaUsuario.equals("voluntario")) {
+			System.out.print("---------------------------------------------------------------------");
+			System.out.print("\n\t\t   Opções de Trabalho Voluntário \n");
+			System.out.print("---------------------------------------------------------------------\n");
 			System.out.print(" ___________________________________________________________________\n");
-			System.out.print("|Qual o serviço que deseja oferecer?                 				  |\n");
-			System.out.print("| 1 - Transporte                                      			  |\n");
-			System.out.print("| 2 - Cozinhar		                                              |\n");
+			System.out.print("| Qual o serviço que deseja oferecer?                               |\n");
+			System.out.print("| 1 - Transporte                                                    |\n");
+			System.out.print("| 2 - Cozinhar                                                      |\n");
 			System.out.print("| 3 - Lecionar                                                      |\n");
-			System.out.print("| 4 - Outros	                                                      |\n");
+			System.out.print("| 4 - Outros                                                        |\n");
 			System.out.print("|___________________________________________________________________|\n");
+			System.out.print("Opção: ");
 			int escolha = scan.nextInt();
 			switch (escolha) {
 
@@ -107,7 +120,7 @@ public class Usuario extends Pessoa {
 	}
 
 	public String nome() {
-		System.out.println("Digite seu nome: ");
+		System.out.print("\nDigite seu nome: ");
 		String nome = scan.nextLine();
 
 		return nome;
@@ -115,7 +128,7 @@ public class Usuario extends Pessoa {
 
 	@Override
 	public int idade() {
-		System.out.println("Digite sua idade: ");
+		System.out.print("Digite sua idade: ");
 		int idade = scan.nextInt();
 		scan.nextLine();
 		return idade;
@@ -128,33 +141,44 @@ public class Usuario extends Pessoa {
 
 			System.out.print("##-----------------------------CoOng-------------------------------##\n");
 			System.out.print("|___________________________________________________________________|\n");
-			System.out.print("| Tecle do 1 ao 4 para ONGs mais perto de você                      |\n");
+			System.out.print("| Qual a que região você reside:                                    |\n");
 			System.out.print("| 1 - Zona Norte                                                    |\n");
 			System.out.print("| 2 - Zona Sul                                                      |\n");
 			System.out.print("| 3 - Zona Leste                                                    |\n");
 			System.out.print("| 4 - Zona Oeste                                                    |\n");
 			System.out.print("|___________________________________________________________________|\n");
-
+			
+			System.out.print("Opção: ");
 			int opcao = scan.nextInt();
 
 			switch (opcao) {
 			case 1:
+				System.out.print("---------------------------------------------------------------------");
 				System.out.print("\n\t\t\tZona Norte Selecionada \n");
+				System.out.print("---------------------------------------------------------------------\n");
 				return "Zona Norte";
 			case 2:
+				System.out.print("---------------------------------------------------------------------");
 				System.out.print("\n\t\t\tZona Sul Selecionada \n");
+				System.out.print("---------------------------------------------------------------------\n");
 				return "Zona Sul";
 
 			case 3:
+				System.out.print("---------------------------------------------------------------------");
 				System.out.print("\n\t\t\tZona Leste Selecionada \n");
+				System.out.print("---------------------------------------------------------------------\n");
 				return "Zona Leste";
 
 			case 4:
+				System.out.print("---------------------------------------------------------------------");
 				System.out.print("\n\t\t\tZona Oeste Selecionada \n");
+				System.out.print("---------------------------------------------------------------------\n");
 				return "Zona Oeste";
 
 			default:
-				System.out.print("\n\t\t\tSelecione uma opção válida!\n");
+				System.out.print("----------------------------------------------------------------");
+				System.out.print("\n\t\tSelecione uma opção válida!\n");
+				System.out.print("----------------------------------------------------------------\n");
 				break;
 			}
 		}

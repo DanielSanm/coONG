@@ -14,12 +14,13 @@ public class Main {
 
 			System.out.print("##-----------------------------CoOng-------------------------------##\n");
 			System.out.print("|___________________________________________________________________|\n");
-			System.out.print("|Selecione uma das opções abaixo                                    |\n");
+			System.out.print("|Selecione uma das opções abaixo:                                   |\n");
 			System.out.print("| 1 - Cadastro usuario                                              |\n");
-			System.out.print("| 2 - Mostrar todos os voluntários cadastrados                      |\n");
+			System.out.print("| 2 - Mostrar todos os usuários cadastrados                         |\n");
 			System.out.print("| 3 - Sair                                                          |\n");
 			System.out.print("|___________________________________________________________________|\n");
-
+			
+			System.out.print("Opção: ");
 			int opcao = scan.nextInt();
 
 			if (opcao == 3) {
