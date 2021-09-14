@@ -7,5 +7,6 @@ public interface InterfaceOrganizacao {
 	public String contato();
 	public int pix();
 	public String necessidades();
-	public void mostraOng();
+	public String definirOng(String regiao);
+	
 }

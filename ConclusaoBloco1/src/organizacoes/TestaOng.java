@@ -2,8 +2,8 @@ package organizacoes;
 
 public class TestaOng {
 	
-	public void tipoOng(Organizacao ong) {
-		ong.mostraOng();
+	public String tipoOng(Organizacao ong, String regiao) {
+		return ong.definirOng(regiao);
 	}
 	
 }

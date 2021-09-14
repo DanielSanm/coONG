@@ -1,7 +1,5 @@
 package organizacoes;
 
-import java.util.ArrayList;
-
 public abstract class Organizacao implements InterfaceOrganizacao {
 	
 	private String nome;

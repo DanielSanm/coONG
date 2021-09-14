@@ -1,10 +1,10 @@
 package organizacoes;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class OngVoluntario extends Organizacao {
 	
-	private ArrayList<OngVoluntario> organizacaoLista = new ArrayList<OngVoluntario>();
+	//private ArrayList<OngVoluntario> organizacaoLista = new ArrayList<OngVoluntario>();
 	
 	public OngVoluntario() {}
 	
@@ -13,7 +13,6 @@ public class OngVoluntario extends Organizacao {
 		this.setRegiao(regiao);
 		this.setContato(contato);
 		this.setPix(pix);
-		
 	}
 	
 	@Override
@@ -47,7 +46,8 @@ public class OngVoluntario extends Organizacao {
 	}
 
 	@Override
-	public void mostraOng() {
-		
+	public String definirOng(String regiao) {
+		System.out.println("Recurso em desenvolvimento");
+		return null;
 	}
 }

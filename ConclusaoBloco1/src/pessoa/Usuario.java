@@ -9,10 +9,10 @@ import organizacoes.TestaOng;
 
 public class Usuario extends Pessoa {
 	Scanner scan = new Scanner(System.in);
-	private TestaOng testaOng = new TestaOng();
+	private TestaOng testaOng = new TestaOng(); //Para chamar métodos da classe TestaOng
 	private String decisaoUsuario = "";
 	private String escolhaOng = "";
-	private String escolhaUsuario = " ";
+	private String escolhaUsuario = "";
 	private ArrayList<Usuario> usuarioLista = new ArrayList<Usuario>();
 
 	public void mostraUsuarios() {
@@ -26,9 +26,8 @@ public class Usuario extends Pessoa {
 		usuario.setRegiao(usuario.localUsuario());
 		usuario.setEscolhaUsuario(usuario.escolhaUsuario());
 		usuario.setDecisaoUsuario(usuario.decisaoUsuario(usuario.getEscolhaUsuario()));
-		usuario.setEscolhaOng(usuario.escolhaOrganizacao(usuario.getEscolhaUsuario()));
+		usuario.setEscolhaOng(usuario.escolhaOrganizacao(usuario.getEscolhaUsuario(), usuario.getRegiao()));
 		usuarioLista.add(usuario);
-		//System.out.println(usuarioLista);
 	}
 
 	public Usuario() {
@@ -47,14 +46,14 @@ public class Usuario extends Pessoa {
 	}
 
 	public String decisaoUsuario(String escolhaUsuario) {
-
+		
 		if (escolhaUsuario.equals("doador")) {
 			System.out.print(" ___________________________________________________________________\n");
-			System.out.print("|O'que você deseja doar?                           				  |\n");
-			System.out.print("| 1 - Dinheiro                                       				  |\n");
-			System.out.print("| 2 - Vestuários		                                              |\n");
+			System.out.print("| O que você deseja doar?                                           |\n");
+			System.out.print("| 1 - Dinheiro                                                      |\n");
+			System.out.print("| 2 - Vestuários		                                    |\n");
 			System.out.print("| 3 - Alimentos                                                     |\n");
-			System.out.print("| 4 - Objetos	                                                      |\n");
+			System.out.print("| 4 - Objetos	                                                    |\n");
 			System.out.print("|___________________________________________________________________|\n");
 			int escolha = scan.nextInt();
 			scan.nextLine();
@@ -110,7 +109,7 @@ public class Usuario extends Pessoa {
 	public String nome() {
 		System.out.println("Digite seu nome: ");
 		String nome = scan.nextLine();
-		// scan.close();
+
 		return nome;
 	}
 
@@ -129,7 +128,7 @@ public class Usuario extends Pessoa {
 
 			System.out.print("##-----------------------------CoOng-------------------------------##\n");
 			System.out.print("|___________________________________________________________________|\n");
-			System.out.print("|Tecle do 1 ao 4 para ONGs mais perto de você, ou tecle 5 para sair.|\n");
+			System.out.print("| Tecle do 1 ao 4 para ONGs mais perto de você                      |\n");
 			System.out.print("| 1 - Zona Norte                                                    |\n");
 			System.out.print("| 2 - Zona Sul                                                      |\n");
 			System.out.print("| 3 - Zona Leste                                                    |\n");
@@ -187,19 +186,14 @@ public class Usuario extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "\nNome " + this.getNome() + " idade: " + this.getIdade();
+		return "\nNome " + this.getNome() + " | idade: " + this.getIdade() + " | Ong selecionada: " + this.getEscolhaOng() + " | \n";
 	}
 
-	public String escolhaOrganizacao(String escolhaUsuario) {
+	public String escolhaOrganizacao(String escolhaUsuario, String regiao) {
 		if(escolhaUsuario.equals("doador")) {
-			testaOng.tipoOng(new OngDoador());
-			System.out.println("Entrou");
+			return testaOng.tipoOng(new OngDoador(), regiao);
 		} else {
-			testaOng.tipoOng(new OngVoluntario());
+			return testaOng.tipoOng(new OngVoluntario(), regiao);
 		}
-		
-		return null;
-
 	}
-
 }
