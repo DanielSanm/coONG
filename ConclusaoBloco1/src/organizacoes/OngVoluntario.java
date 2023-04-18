@@ -17,31 +17,31 @@ public class OngVoluntario extends Organizacao {
 	
 	@Override
 	public String nome() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public String regiao() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public String contato() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public int pix() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 	@Override
 	public String necessidades() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
